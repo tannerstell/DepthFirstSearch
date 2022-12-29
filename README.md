@@ -3,7 +3,7 @@
 This is a problem I generated that was inspired by other matrix puzzles. The neighboring values are referenced quaddirectionally (up,down,left,right).
 
  
-I'm working on making an algorithm that will reference 8 neighboring cells ( up_left, up, up_right, left, center, right, down_left, down, down_right).
+I'm working on making an algorithm that will reference 8 neighboring cells ( up_left, up, up_right, left, right, down_left, down, down_right).
 
 
 Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive),
