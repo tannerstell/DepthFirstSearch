@@ -3,7 +3,7 @@
 This is a problem I created that was inspired by other matrix puzzles. The neighboring values are referenced quaddirectionally (up,down,left,right).
 
  
-I'm working on making an algorithm that will reference 8 neighboring cells ( up_left, up, up_right, left, right, down_left, down, down_right).
+I'm would like to work on making an algorithm that will reference 8 neighboring cells ( up_left, up, up_right, left, right, down_left, down, down_right).
 
 
 Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive),
@@ -28,3 +28,5 @@ Process:
 3. If the value of the neighbor is a 1, then append it to a list of paths for the current cell. (path)
 4. Recursively call the function again to find neighbors.
 5. Find the maximum length of all of the paths. (paths)
+
+Bugs to fix: The recursive function returns path before other paths can be checked.
