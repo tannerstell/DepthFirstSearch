@@ -1,5 +1,7 @@
 # DepthFirstSearch
 
+This is a problem I generated that was inspired by other matrix puzzles.
+
 Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive),
 and return the maximum length of connected 1s (Excluding paths containing same path).
 
