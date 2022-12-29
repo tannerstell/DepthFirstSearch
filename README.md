@@ -12,6 +12,7 @@ and return the maximum length of connected 1s.
 Problem 2: Return an array of largest to smallest lengths of connecting 1s (Excluding paths containing same path).
 
 
+
 **Documentation before solving problem:**
 
 1. Structure: Since this is a two dimensional array, double for loop or DataFrame may be necessary.
