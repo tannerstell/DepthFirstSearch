@@ -17,7 +17,7 @@ def get_coordinates(center, matrix):
                     matrix[x][y] = '#'
                     path.append(hashmap[(x,y)])
                     center = (x,y)
-                    return get_coordinates(center, df)
+                    return get_coordinates(center, matrix)
             except:
                 pass
         else:
