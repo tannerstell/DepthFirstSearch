@@ -15,7 +15,7 @@ Problem 2: Return an array of largest to smallest lengths of connecting 1s (Excl
 
 **Documentation before solving problem:**
 
-1. Structure: Since this is a two dimensional array, double for loop or DataFrame may be necessary.
+1. Structure: Since this is a two dimensional array, double for loop or DataFrame methods may be necessary.
 To simplify indexing coordinates, unique IDs can be generated with a hashmap, using the respective coordinate
 as a key and id as value.
 
