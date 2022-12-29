@@ -3,12 +3,16 @@
 This is a problem I generated that was inspired by other matrix puzzles. The neighboring values are referenced quaddirectionally (up,down,left,right).
 
  X
+ 
 XOX
+
  X
 I'm working on making an algorithm that will reference 8 neighboring cells, or the 'X's below.
 
 XXX
+
 XOX
+
 XXX
 
 Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive),
