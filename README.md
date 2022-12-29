@@ -2,7 +2,7 @@
 
 This is a problem I generated that was inspired by other matrix puzzles.
 
-Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive),
+Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive as in quaddirectional),
 and return the maximum length of connected 1s (Excluding paths containing same path).
 
 Problem 2: Return an array of largest to smallest lengths of connecting 1s. 
