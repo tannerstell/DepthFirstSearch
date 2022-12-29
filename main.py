@@ -5,18 +5,6 @@ matrix = [[1,0,0,1,0],[1,0,1,0,0],[0,0,1,0,1],[1,0,1,0,1],[1,0,1,1,0]]
 df = DataFrame(matrix)
 print(df)
 
-# Problem: Find the lengths of connecting 1s (horizontally and vertically inclusive),
-# and return an array of largest to smallest lengths (Excluding paths containing same path).
-
-# 1. Structure: Since this is a two dimensional array, double for loop may be necessary.
-# 2. Method: Depth-first search method will be useful, as there will be multiple paths
-
-# Process:
-# 1. Loop through each column and find the longest path of 1s, backtracking if necessary.
-# 2. Append the integers of the length of paths to a list.
-
-# hashmap = [(x,{}) for x in range(len(matrix))]
-# hashmap = dict(hashmap)
 hashmap = dict(((x,y),(y)*len(matrix)+x+1) for y, sublist in enumerate(matrix) for x, item in enumerate(sublist))
 
 path = []
