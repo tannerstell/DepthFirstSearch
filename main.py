@@ -1,36 +1,29 @@
-matrix = [[1,0,0,1,0],[1,1,1,0,0],[0,0,1,0,1],[1,0,1,0,1],[1,0,1,1,1]]
+from pandas import DataFrame
+
+matrix = [[1,1,0,1,0],[1,1,1,0,0],[0,0,1,0,1],[1,0,1,0,1],[1,0,1,1,1]]
+df = DataFrame(matrix)
 
 # Generates incremented id for every coordinate and assigns the coordinate as the key and returns the unique id.
-hashmap = dict(((x,y),(y)*len(matrix)+x+1) for y, sublist in enumerate(matrix) for x, item in enumerate(sublist)) 
+hashmap_graph = dict([(i*len(row)+j,[]) for i,row in enumerate(matrix) for j,val in enumerate(row)])
+id = dict([((i,j),i*len(row)+j) for i,row in enumerate(matrix) for j,val in enumerate(row)])
 
-path = []
-paths = []
-
-def get_coordinates(center, matrix):
-    x,y = center
-    coordinates = [(x,y-1),(x+1,y),(x,y+1),(x-1,y)] # Up, Right, Down, Left
-    for c in coordinates:
-        if c[0]>=0 and c[1]>=0:
-            x,y = c
-            try:
-                if matrix[x][y]==1 and matrix[x][y]==1 and hashmap[(x,y)] not in path:
-                    matrix[x][y] = '#'
-                    path.append(hashmap[(x,y)])
-                    center = (x,y)
-                    return get_coordinates(center, matrix)
-            except:
-                pass
-        else:
+def get_neighbor(x,y):
+    center = x,y
+    mappings = [(x,y-1),(x,y+1),(x-1,y),(x+1,y)]
+    neighbors = []
+    for mapping in mappings:
+        try:
+            x,y = mapping
+            if x>=0 & y>=0:
+                if matrix[x][y]==1:
+                    neighbors.append(id[(x,y)])
+        except:
             pass
-    return
+    return neighbors
 
-for y in range(len(matrix)):
-    for x, val in enumerate(matrix[y]):
-        if val==1:
-            path.append(hashmap[(x,y)])
-        get_coordinates((x,y), matrix)
-        paths.append(path)
-        path = []
+def coordinate(id_val):
+    return list(id.keys())[list(id.values()).index(id_val)]
 
-t = max([len(path) for path in paths])
-print(t)
+[hashmap_graph[id[(x,y)]].extend(get_neighbor(x,y)) for x, row in enumerate(matrix) for y, val in enumerate(row)]
+
+print(hashmap_graph)
