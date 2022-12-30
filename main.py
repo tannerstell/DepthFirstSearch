@@ -21,9 +21,44 @@ def get_neighbor(x,y):
             pass
     return neighbors
 
-def coordinate(id_val):
+
+def get_coordinate(id_val):
     return list(id.keys())[list(id.values()).index(id_val)]
+
+def backtracking():
+
+    pass
+path = [0]
+paths = []
+visited = set()
+
+def dfs(id):
+    if id not in visited:
+        visited.add(id)
+    temp_hashmap = hashmap_graph.copy()
+    neighbors = temp_hashmap[id]
+    for neighbor in neighbors:
+        if neighbor not in visited:
+            visited.add(neighbor)
+            path.append(neighbor)
+            return dfs(neighbor)
+        else:
+            neighbors.pop(0)
+            dfs(id)
+
+    if neighbors==[] and len(path)!=0:
+        x = [True for subpath in paths if set(path).issubset(set(subpath))]
+        if not True in x:
+            paths.append(path.copy())
+        path.pop()
+    if len(path)==0:
+        return paths
+    dfs(path[-1])
+
+
+
 
 [hashmap_graph[id[(x,y)]].extend(get_neighbor(x,y)) for x, row in enumerate(matrix) for y, val in enumerate(row)]
 
-print(hashmap_graph)
+dfs(0)
+print(visited)
