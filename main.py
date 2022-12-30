@@ -55,9 +55,6 @@ def dfs(id):
         return paths
     dfs(path[-1])
 
-
-
-
 [hashmap_graph[id[(x,y)]].extend(get_neighbor(x,y)) for x, row in enumerate(matrix) for y, val in enumerate(row)]
 
 dfs(0)
