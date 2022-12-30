@@ -3,8 +3,9 @@ from pandas import DataFrame
 matrix = [[1,1,0,1,0],[1,1,1,0,0],[0,0,1,0,1],[1,0,1,0,1],[1,0,1,1,1]]
 df = DataFrame(matrix)
 
-# Generates incremented id for every coordinate and assigns the coordinate as the key and returns the unique id.
+# Generates key/value pairs for neighboring cells containing 1.
 hashmap_graph = dict([(i*len(row)+j,[]) for i,row in enumerate(matrix) for j,val in enumerate(row)])
+# Maps unique IDs to the coordinates of the matrix.
 id = dict([((i,j),i*len(row)+j) for i,row in enumerate(matrix) for j,val in enumerate(row)])
 
 def get_neighbor(x,y):
