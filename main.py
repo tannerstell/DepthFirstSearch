@@ -22,13 +22,6 @@ def get_neighbor(x,y):
             pass
     return neighbors
 
-
-def get_coordinate(id_val):
-    return list(id.keys())[list(id.values()).index(id_val)]
-
-def backtracking():
-
-    pass
 path = [0]
 paths = []
 visited = set()
